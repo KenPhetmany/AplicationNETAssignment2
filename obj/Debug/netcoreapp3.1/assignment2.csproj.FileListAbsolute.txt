@@ -1,0 +1,12 @@
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.exe
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.deps.json
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.runtimeconfig.json
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.runtimeconfig.dev.json
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.dll
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\bin\Debug\netcoreapp3.1\assignment2.pdb
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.AssemblyInfoInputs.cache
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.AssemblyInfo.cs
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.csproj.CoreCompileInputs.cache
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.dll
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.pdb
+C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\netcoreapp3.1\assignment2.genruntimeconfig.cache
