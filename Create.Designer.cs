@@ -31,20 +31,20 @@
             this.passwordTitle = new System.Windows.Forms.Label();
             this.usernameTitle = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
-            this.username = new System.Windows.Forms.TextBox();
             this.firstNameTItle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.firstName = new System.Windows.Forms.TextBox();
+            this.confirmPassword = new System.Windows.Forms.TextBox();
             this.lastNameTitle = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.birthDate = new System.Windows.Forms.DateTimePicker();
             this.dobTitle = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.userType = new System.Windows.Forms.ComboBox();
             this.userTypeTitle = new System.Windows.Forms.Label();
             this.createBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.createTitle = new System.Windows.Forms.Label();
+            this.username1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // passwordTitle
@@ -72,18 +72,9 @@
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(327, 123);
             this.password.Name = "password";
-            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 30);
             this.password.TabIndex = 9;
             this.password.UseSystemPasswordChar = true;
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(327, 87);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(218, 30);
-            this.username.TabIndex = 8;
             // 
             // firstNameTItle
             // 
@@ -105,23 +96,23 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Re-enter Password:";
             // 
-            // textBox1
+            // firstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(327, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(218, 30);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName.Location = new System.Drawing.Point(327, 195);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(218, 30);
+            this.firstName.TabIndex = 13;
             // 
-            // textBox2
+            // confirmPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(327, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 30);
-            this.textBox2.TabIndex = 12;
+            this.confirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPassword.Location = new System.Drawing.Point(327, 159);
+            this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.PasswordChar = '*';
+            this.confirmPassword.Size = new System.Drawing.Size(218, 30);
+            this.confirmPassword.TabIndex = 12;
+            this.confirmPassword.UseSystemPasswordChar = true;
             // 
             // lastNameTitle
             // 
@@ -133,21 +124,20 @@
             this.lastNameTitle.TabIndex = 18;
             this.lastNameTitle.Text = "Last Name:";
             // 
-            // textBox4
+            // lastName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(327, 231);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(218, 30);
-            this.textBox4.TabIndex = 16;
+            this.lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName.Location = new System.Drawing.Point(327, 231);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(218, 30);
+            this.lastName.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // birthDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(327, 270);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 19;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.birthDate.Location = new System.Drawing.Point(327, 270);
+            this.birthDate.Name = "birthDate";
+            this.birthDate.Size = new System.Drawing.Size(200, 26);
+            this.birthDate.TabIndex = 19;
             // 
             // dobTitle
             // 
@@ -159,13 +149,14 @@
             this.dobTitle.TabIndex = 20;
             this.dobTitle.Text = "Date of Birth:";
             // 
-            // comboBox1
+            // userType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(377, 302);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 21;
+            this.userType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.userType.FormattingEnabled = true;
+            this.userType.Location = new System.Drawing.Point(377, 302);
+            this.userType.Name = "userType";
+            this.userType.Size = new System.Drawing.Size(121, 28);
+            this.userType.TabIndex = 21;
             // 
             // userTypeTitle
             // 
@@ -207,28 +198,36 @@
             this.createTitle.TabIndex = 25;
             this.createTitle.Text = "Create a New User";
             // 
+            // username1
+            // 
+            this.username1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username1.Location = new System.Drawing.Point(327, 87);
+            this.username1.Name = "username1";
+            this.username1.Size = new System.Drawing.Size(218, 30);
+            this.username1.TabIndex = 26;
+            // 
             // Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.username1);
             this.Controls.Add(this.createTitle);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.createBtn);
             this.Controls.Add(this.userTypeTitle);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.userType);
             this.Controls.Add(this.dobTitle);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.birthDate);
             this.Controls.Add(this.lastNameTitle);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.lastName);
             this.Controls.Add(this.firstNameTItle);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.firstName);
+            this.Controls.Add(this.confirmPassword);
             this.Controls.Add(this.passwordTitle);
             this.Controls.Add(this.usernameTitle);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.username);
             this.Name = "Create";
             this.Text = "Create";
             this.ResumeLayout(false);
@@ -240,19 +239,19 @@
         private System.Windows.Forms.Label passwordTitle;
         private System.Windows.Forms.Label usernameTitle;
         private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Label firstNameTItle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox firstName;
+        private System.Windows.Forms.TextBox confirmPassword;
         private System.Windows.Forms.Label lastNameTitle;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox lastName;
+        private System.Windows.Forms.DateTimePicker birthDate;
         private System.Windows.Forms.Label dobTitle;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox userType;
         private System.Windows.Forms.Label userTypeTitle;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label createTitle;
+        private System.Windows.Forms.TextBox username1;
         }
     }
