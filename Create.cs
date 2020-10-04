@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System;
 using System.IO;
-using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace assignment2
     {
@@ -25,9 +16,9 @@ namespace assignment2
         private void createBtn_Click(object sender, EventArgs e)
             {
             //validateFilled();
-            //validatePassword();
             //validateUsername();
-           
+            //validatePassword();
+
             //CreateAccount();
             //DialogResult complete = MessageBox.Show("An account has been created for: " + username1.Text, "Creation Successful!");
             //if (complete == DialogResult.OK)
@@ -83,6 +74,7 @@ namespace assignment2
                     }
                 }
             }
+
         private void CreateAccount()
             {
             //MessageBox.Show(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text, "Login");
@@ -94,8 +86,5 @@ namespace assignment2
                 writer.Close();
                 }
             }
-
         }
-
-
     }
