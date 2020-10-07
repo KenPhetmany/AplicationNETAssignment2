@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\obj"
   ],
-  "SelectedNode": "\\TextEditor.Designer.cs",
+  "SelectedNode": "\\TextEditor.cs",
   "PreviewInSolutionExplorer": false
 }

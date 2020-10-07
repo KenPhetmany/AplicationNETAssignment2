@@ -17,7 +17,6 @@ namespace assignment2
             {
             InitializeComponent();
             InitializeFontSize();
-
             }
 
         private void InitializeFontSize(){
@@ -46,6 +45,26 @@ namespace assignment2
             var test = float.Parse(fontComboBox.Text);
             string fontName = richTextBox.SelectionFont.Name;
             richTextBox.SelectionFont = new Font(fontName, test);
+            }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Cut();
+            }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Copy();
+            }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Paste();
+            }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            Application.Exit();
             }
         }
     }
