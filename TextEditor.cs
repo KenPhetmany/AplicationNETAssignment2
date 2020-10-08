@@ -67,5 +67,21 @@ namespace assignment2
             Application.Exit();
             }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+            {
+            richTextBox.Cut();
+
+            }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+            {
+            richTextBox.Copy();
+            }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+            {
+            richTextBox.Paste();
+
+            }
         }
     }
