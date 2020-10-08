@@ -12,7 +12,11 @@ namespace assignment2
 
         private void loginBtn_click(object sender, EventArgs e)
             {
-            //MessageBox.Show("Username:" + username.Text + "\n Password: " + password.Text, "Login");
+            if (username.Text == "" || password.Text == "")
+                {
+                MessageBox.Show("Login failed", "You have empty fields! Please enter valid inputs ");
+                }
+            else
             login();
             }
 
@@ -42,9 +46,7 @@ namespace assignment2
                 if (username.Text == details[0] && password.Text == details[1])
                     {
                     MessageBox.Show("Login worked!", "Logging in now...!");
-                    string loggedUser = username.Text;
-                    string loggedType = details[3];
-                    TextEditor textEditor = new TextEditor(loggedUser, loggedType);
+                    TextEditor textEditor = new TextEditor(username.Text, details[3]);
                     this.Hide();
                     textEditor.ShowDialog();
                     break;
