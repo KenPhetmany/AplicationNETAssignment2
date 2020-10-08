@@ -60,6 +60,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -75,7 +76,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,9 +184,9 @@
             this.qMarkBtn,
             this.toolStripSeparator2,
             this.userNameTitle});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -195,8 +196,9 @@
             this.newBtn.Image = ((System.Drawing.Image)(resources.GetObject("newBtn.Image")));
             this.newBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newBtn.Name = "newBtn";
-            this.newBtn.Size = new System.Drawing.Size(34, 33);
+            this.newBtn.Size = new System.Drawing.Size(34, 28);
             this.newBtn.Text = "New";
+            this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
             // openBtn
             // 
@@ -206,6 +208,7 @@
             this.openBtn.Name = "openBtn";
             this.openBtn.Size = new System.Drawing.Size(34, 28);
             this.openBtn.Text = "Open";
+            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             // 
             // saveBtn
             // 
@@ -215,6 +218,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(34, 28);
             this.saveBtn.Text = "Save";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // saveAsBtn
             // 
@@ -224,6 +228,7 @@
             this.saveAsBtn.Name = "saveAsBtn";
             this.saveAsBtn.Size = new System.Drawing.Size(34, 28);
             this.saveAsBtn.Text = "Save-As";
+            this.saveAsBtn.Click += new System.EventHandler(this.saveAsBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -287,9 +292,9 @@
             // 
             // richTextBox
             // 
-            this.richTextBox.Location = new System.Drawing.Point(12, 69);
+            this.richTextBox.Location = new System.Drawing.Point(53, 69);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(776, 369);
+            this.richTextBox.Size = new System.Drawing.Size(735, 369);
             this.richTextBox.TabIndex = 2;
             this.richTextBox.Text = "";
             // 
@@ -301,11 +306,12 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 74);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 66);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(48, 376);
+            this.toolStrip2.Size = new System.Drawing.Size(36, 384);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
+            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -323,7 +329,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(43, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(31, 28);
             this.toolStripButton2.Text = "copyBtn";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -333,9 +339,14 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(43, 28);
+            this.toolStripButton3.Size = new System.Drawing.Size(31, 28);
             this.toolStripButton3.Text = "pasteBtn";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // openFile
+            // 
+            this.openFile.Filter = "Text Files|*.txt|RTF Files|*.rtf";
+            this.openFile.Title = "Open File";
             // 
             // TextEditor
             // 
@@ -391,5 +402,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.OpenFileDialog openFile;
         }
     }

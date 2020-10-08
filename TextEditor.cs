@@ -27,6 +27,29 @@ namespace assignment2
             fontComboBox.Items.Add(16);
             fontComboBox.Items.Add(18);
             }
+
+        private void newBtn_Click(object sender, EventArgs e)
+            {
+            richTextBox.Clear();
+            }
+
+        private void openBtn_Click(object sender, EventArgs e)
+            {
+            if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
+                }
+            }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+            {
+
+            }
+
+        private void saveAsBtn_Click(object sender, EventArgs e)
+            {
+
+            }
         private void boldBtn_Click(object sender, System.EventArgs e)
             {
             richTextBox.SelectionFont = new Font(this.Font, FontStyle.Bold);
@@ -45,6 +68,23 @@ namespace assignment2
             var test = float.Parse(fontComboBox.Text);
             string fontName = richTextBox.SelectionFont.Name;
             richTextBox.SelectionFont = new Font(fontName, test);
+            }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+            {
+            richTextBox.Cut();
+
+            }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+            {
+            richTextBox.Copy();
+            }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+            {
+            richTextBox.Paste();
+
             }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,20 +107,8 @@ namespace assignment2
             Application.Exit();
             }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
             {
-            richTextBox.Cut();
-
-            }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-            {
-            richTextBox.Copy();
-            }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-            {
-            richTextBox.Paste();
 
             }
         }
