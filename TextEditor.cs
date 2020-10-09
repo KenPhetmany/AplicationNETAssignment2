@@ -1,25 +1,27 @@
-﻿using System.Windows.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace assignment2
     {
     public partial class TextEditor : Form
         {
+        string fileName = "";
+
         public TextEditor(string username, string userType)
+
             {
             InitializeComponent();
             InitializeFontSize();
+            if (userType == "View")
+                {
+                richTextBox.ReadOnly = true;
+                }
             }
 
-        private void InitializeFontSize(){
+        private void InitializeFontSize()
+            {
             fontComboBox.Items.Add(8);
             fontComboBox.Items.Add(10);
             fontComboBox.Items.Add(12);
@@ -38,18 +40,30 @@ namespace assignment2
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
                 richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
+                fileName = openFile.FileName;
                 }
             }
 
         private void saveBtn_Click(object sender, EventArgs e)
             {
-
             }
 
         private void saveAsBtn_Click(object sender, EventArgs e)
             {
-
+            if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                try
+                    {
+                    richTextBox.SaveFile(saveFile.FileName,
+                   RichTextBoxStreamType.PlainText);
+                    }
+                catch (Exception ex)
+                    {
+                    MessageBox.Show(ex.Message);
+                    }
+                }
             }
+
         private void boldBtn_Click(object sender, System.EventArgs e)
             {
             richTextBox.SelectionFont = new Font(this.Font, FontStyle.Bold);
@@ -59,10 +73,12 @@ namespace assignment2
             {
             richTextBox.SelectionFont = new Font(this.Font, FontStyle.Italic);
             }
+
         private void underlineBtn_Click(object sender, EventArgs e)
             {
             richTextBox.SelectionFont = new Font(this.Font, FontStyle.Underline);
             }
+
         private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
             {
             var test = float.Parse(fontComboBox.Text);
@@ -73,7 +89,6 @@ namespace assignment2
         private void toolStripButton1_Click(object sender, EventArgs e)
             {
             richTextBox.Cut();
-
             }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -84,7 +99,6 @@ namespace assignment2
         private void toolStripButton3_Click(object sender, EventArgs e)
             {
             richTextBox.Paste();
-
             }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,9 +121,48 @@ namespace assignment2
             Application.Exit();
             }
 
-        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private bool fileExists(string title)
             {
+            string[] documents = Directory.GetFiles("documents");
+            foreach (string i in documents)
+            // Processes each value to check whether the input exists in the array string
+                {
+                if (i == "documents\\" + title + ".txt" || i == "documents\\" + title + ".rft")
+                    {
+                    return true;
+                    }
+                }
+            return false;
+            }
 
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Clear();
+            }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
+                fileName = openFile.FileName;
+                }
+            }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                try
+                    {
+                    richTextBox.SaveFile(saveFile.FileName,
+                   RichTextBoxStreamType.PlainText);
+                    }
+                catch (Exception ex)
+                    {
+                    MessageBox.Show(ex.Message);
+                    }
+                }
             }
         }
     }

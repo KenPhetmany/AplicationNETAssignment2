@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\bin",
+    "\\bin\\Debug",
     "\\obj"
   ],
   "SelectedNode": "\\TextEditor.cs",
