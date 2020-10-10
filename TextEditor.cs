@@ -16,7 +16,7 @@ namespace assignment2
             InitializeFontSize();
             if (userType == "View")
                 {
-                richTextBox.ReadOnly = true;
+                richTextBox.ReadOnly = false;
                 }
             }
 
@@ -86,58 +86,19 @@ namespace assignment2
             richTextBox.SelectionFont = new Font(fontName, test);
             }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void cutBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Cut();
             }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void copyBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Copy();
             }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void pasteBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Paste();
-            }
-
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            richTextBox.Cut();
-            }
-
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            richTextBox.Copy();
-            }
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            richTextBox.Paste();
-            }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            Application.Exit();
-            }
-
-        private bool fileExists(string title)
-            {
-            string[] documents = Directory.GetFiles("documents");
-            foreach (string i in documents)
-            // Processes each value to check whether the input exists in the array string
-                {
-                if (i == "documents\\" + title + ".txt" || i == "documents\\" + title + ".rft")
-                    {
-                    return true;
-                    }
-                }
-            return false;
-            }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            richTextBox.Clear();
             }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,6 +108,11 @@ namespace assignment2
                 richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
                 fileName = openFile.FileName;
                 }
+            }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+
             }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,5 +130,52 @@ namespace assignment2
                     }
                 }
             }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            Application.Exit();
+            }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Cut();
+            }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Copy();
+            }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Paste();
+            }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            richTextBox.Clear();
+            }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            string message = "98042183";
+            MessageBox.Show(message, "About");
+            }
+
+        private bool fileExists(string title)
+            {
+            string[] documents = Directory.GetFiles("documents");
+            foreach (string i in documents)
+            // Processes each value to check whether the input exists in the array string
+                {
+                if (i == "documents\\" + title + ".txt" || i == "documents\\" + title + ".rft")
+                    {
+                    return true;
+                    }
+                }
+            return false;
+            }
+
+
         }
     }

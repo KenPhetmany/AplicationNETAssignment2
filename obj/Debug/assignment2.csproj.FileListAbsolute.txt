@@ -10,3 +10,15 @@ C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET
 C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\assignment2.Login.resources
 C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\assignment2.Create.resources
 C:\Users\Ken Phetmany\Desktop\Projects\Software Development\Uni\Application .NET\Assignment 2\AplicationNETAssignment2\obj\Debug\assignment2.TextEditor.resources
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\bin\Debug\assignment2.exe.config
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\bin\Debug\assignment2.exe
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\bin\Debug\assignment2.pdb
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.csprojAssemblyReference.cache
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.Create.resources
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.Login.resources
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.Properties.Resources.resources
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.TextEditor.resources
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.csproj.GenerateResource.cache
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.csproj.CoreCompileInputs.cache
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.exe
+C:\Users\Ken\Desktop\Projects\Uni\.NET Development\assignment02\AplicationNETAssignment2\obj\Debug\assignment2.pdb
