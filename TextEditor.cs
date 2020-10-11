@@ -14,6 +14,8 @@ namespace assignment2
             {
             InitializeComponent();
             InitializeFontSize();
+            userNameTitle.Text = "Username: " + username;
+            userTypeTitle.Text = "User type: " + userType;
             if (userType == "View")
                 {
                 richTextBox.ReadOnly = false;
@@ -40,12 +42,33 @@ namespace assignment2
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
                 richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
-                fileName = openFile.FileName;
+                fileName = Path.GetFileName(openFile.FileName);
                 }
             }
 
         private void saveBtn_Click(object sender, EventArgs e)
             {
+            if (fileExists(fileName))
+                {
+                string path = "documents\\" + fileName;
+                richTextBox.SaveFile(path, RichTextBoxStreamType.PlainText);
+                MessageBox.Show("Saving at: " + fileName);
+                }
+            else
+                {
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                    {
+                    try
+                        {
+                        richTextBox.SaveFile(saveFile.FileName,
+                       RichTextBoxStreamType.PlainText);
+                        }
+                    catch (Exception ex)
+                        {
+                        MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
             }
 
         private void saveAsBtn_Click(object sender, EventArgs e)
@@ -54,7 +77,7 @@ namespace assignment2
                 {
                 try
                     {
-                    richTextBox.SaveFile(saveFile.FileName,
+                   richTextBox.SaveFile(saveFile.FileName,
                    RichTextBoxStreamType.PlainText);
                     }
                 catch (Exception ex)
@@ -112,7 +135,27 @@ namespace assignment2
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
             {
-
+            if (fileExists(fileName))
+                {
+                string path = "documents\\" + fileName;
+                richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
+                MessageBox.Show("Saving at: " + fileName);
+                }
+            else
+                {
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                    {
+                    try
+                        {
+                        richTextBox.SaveFile(saveFile.FileName,
+                       RichTextBoxStreamType.PlainText);
+                        }
+                    catch (Exception ex)
+                        {
+                        MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
             }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,7 +211,7 @@ namespace assignment2
             foreach (string i in documents)
             // Processes each value to check whether the input exists in the array string
                 {
-                if (i == "documents\\" + title + ".txt" || i == "documents\\" + title + ".rft")
+                if (i == "documents\\" + title || i == "documents\\" + title)
                     {
                     return true;
                     }

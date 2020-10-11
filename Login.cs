@@ -53,7 +53,7 @@ namespace assignment2
                     }
                 else
                     {
-                    MessageBox.Show("Login failed", "Login failed!");
+                    MessageBox.Show("Login failed", "Inputs are invalid! Please try again.");
                     break;
                     }
                 }
