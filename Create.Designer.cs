@@ -134,10 +134,12 @@
             // 
             // birthDate
             // 
+            this.birthDate.CustomFormat = "\"dd MM yyyy\"";
             this.birthDate.Location = new System.Drawing.Point(327, 270);
             this.birthDate.Name = "birthDate";
             this.birthDate.Size = new System.Drawing.Size(200, 26);
             this.birthDate.TabIndex = 19;
+            this.birthDate.Value = new System.DateTime(2020, 10, 17, 0, 0, 0, 0);
             // 
             // dobTitle
             // 

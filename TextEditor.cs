@@ -7,7 +7,7 @@ namespace assignment2
     {
     public partial class TextEditor : Form
         {
-        string fileName = "";
+        private string fileName = "";
 
         public TextEditor(string username, string userType)
 
@@ -24,12 +24,10 @@ namespace assignment2
 
         private void InitializeFontSize()
             {
-            fontComboBox.Items.Add(8);
-            fontComboBox.Items.Add(10);
-            fontComboBox.Items.Add(12);
-            fontComboBox.Items.Add(14);
-            fontComboBox.Items.Add(16);
-            fontComboBox.Items.Add(18);
+            for (int i = 8; i <= 20; i++)
+                {
+                fontComboBox.Items.Add(i);
+                }
             }
 
         private void newBtn_Click(object sender, EventArgs e)
@@ -77,8 +75,8 @@ namespace assignment2
                 {
                 try
                     {
-                   richTextBox.SaveFile(saveFile.FileName,
-                   RichTextBoxStreamType.PlainText);
+                    richTextBox.SaveFile(saveFile.FileName,
+                    RichTextBoxStreamType.PlainText);
                     }
                 catch (Exception ex)
                     {
@@ -218,7 +216,5 @@ namespace assignment2
                 }
             return false;
             }
-
-
         }
     }
