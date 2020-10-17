@@ -15,11 +15,21 @@ namespace assignment2
 
         private void createBtn_Click(object sender, EventArgs e)
             {
-            //validateFilled();
-            //validateUsername();
-            //validatePassword();
+            if (validateFilled())
+                {
+                MessageBox.Show("You are missing some details! Please fill in missing details!", "Creation Failed!");
+                }
+            else if (validatePassword())
+                {
+                MessageBox.Show("Passwords dont match! Please try again.", "Creation Failed!");
+                }
+            else if (validateUsername())
+                {
+                MessageBox.Show("Username already exists!", "Creation Failed!");
+                }
+            else CreateAccount();
 
-            //CreateAccount();
+           // CreateAccount();
             //DialogResult complete = MessageBox.Show("An account has been created for: " + username1.Text, "Creation Successful!");
             //if (complete == DialogResult.OK)
             //    {
@@ -36,27 +46,27 @@ namespace assignment2
             login.ShowDialog();
             }
 
-        private void validateFilled()
+        private bool validateFilled()
             {
             if (username1.Text == "" || password.Text == "" || confirmPassword.Text == "" || firstName.Text == "" || lastName.Text == "" || userType.Text == "")
                 {
-                MessageBox.Show("You are missing some details! Please fill in missing details!", "Creation Failed!");
+
+                return true;
                 }
+            else return false;
             }
 
-        private void validatePassword()
+        private bool validatePassword()
             {
             if (password.Text != confirmPassword.Text)
                 {
-                MessageBox.Show("Passwords dont match! Please try again.", "Creation Failed!");
+                return true;
                 }
             else
-                {
-                MessageBox.Show("Passwords match!", "Creation Created!");
-                }
+                return false;
             }
 
-        private void validateUsername()
+        private bool validateUsername()
             {
             string[] lines = System.IO.File.ReadAllLines("login.txt");
             for (int i = 0; i < lines.Length; i++)
@@ -64,27 +74,24 @@ namespace assignment2
                 string[] details = lines[i].Split(',');
                 if (username1.Text == details[0])
                     {
-                    MessageBox.Show("Username already exists!", "Creation Failed!");
-                    break;
+                    return true;
                     }
                 else
-                    {
-                    MessageBox.Show("Username available!", "Creation Created!");
-                    break;
-                    }
+                    return false;
                 }
+            return true;
             }
 
         private void CreateAccount()
             {
-            //MessageBox.Show(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text, "Login");
+            MessageBox.Show(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text, "Login");
 
-            using (StreamWriter writer = new StreamWriter("login.txt", true))
-                {
-                // Appends to the text file, adding a new line of text.
-                writer.Write(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text);
-                writer.Close();
-                }
+            //using (StreamWriter writer = new StreamWriter("login.txt", true))
+            //    {
+            //    // Appends to the text file, adding a new line of text.
+            //    writer.Write(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text);
+            //    writer.Close();
+            //    }
             }
         }
     }

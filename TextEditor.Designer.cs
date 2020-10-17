@@ -55,6 +55,7 @@
             this.qMarkBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.userNameTitle = new System.Windows.Forms.ToolStripLabel();
+            this.userTypeTitle = new System.Windows.Forms.ToolStripLabel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.cutBtn = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +63,8 @@
             this.pasteBtn = new System.Windows.Forms.ToolStripButton();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
-            this.userTypeTitle = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -78,8 +80,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -192,11 +193,13 @@
             this.qMarkBtn,
             this.toolStripSeparator2,
             this.userNameTitle,
-            this.userTypeTitle});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
+            this.userTypeTitle,
+            this.toolStripSeparator3,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -206,7 +209,7 @@
             this.newBtn.Image = ((System.Drawing.Image)(resources.GetObject("newBtn.Image")));
             this.newBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newBtn.Name = "newBtn";
-            this.newBtn.Size = new System.Drawing.Size(34, 28);
+            this.newBtn.Size = new System.Drawing.Size(34, 33);
             this.newBtn.Text = "New";
             this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
@@ -300,6 +303,12 @@
             this.userNameTitle.Size = new System.Drawing.Size(108, 33);
             this.userNameTitle.Text = "User Name: ";
             // 
+            // userTypeTitle
+            // 
+            this.userTypeTitle.Name = "userTypeTitle";
+            this.userTypeTitle.Size = new System.Drawing.Size(93, 33);
+            this.userTypeTitle.Text = "User Type:";
+            // 
             // richTextBox
             // 
             this.richTextBox.Location = new System.Drawing.Point(52, 69);
@@ -316,10 +325,10 @@
             this.cutBtn,
             this.copyBtn,
             this.pasteBtn});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 66);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 74);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(49, 383);
+            this.toolStrip2.Size = new System.Drawing.Size(37, 375);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -362,11 +371,20 @@
             // 
             this.saveFile.Filter = "Text Files|*.txt|RTF Files|*.rtf";
             // 
-            // userTypeTitle
+            // toolStripSeparator3
             // 
-            this.userTypeTitle.Name = "userTypeTitle";
-            this.userTypeTitle.Size = new System.Drawing.Size(93, 33);
-            this.userTypeTitle.Text = "User Type:";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // TextEditor
             // 
@@ -425,5 +443,7 @@
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.ToolStripLabel userTypeTitle;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
         }
     }

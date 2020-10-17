@@ -74,13 +74,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="TextEditor.resx">
       <DependentUpon>TextEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +94,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="login.txt" />
+    <None Include="Properties\Open.png" />
+    <None Include="Properties\open.jpg" />
+    <None Include="Properties\New %282%29.png" />
+    <None Include="Properties\if_save_173091.png" />
+    <None Include="Properties\if_paste_3671826.png" />
+    <None Include="Properties\if_icon-ios7-copy-outline_211732.png" />
+    <None Include="Properties\if_clipboard_cut_42190.png" />
+    <None Include="Properties\gnome_logout.png" />
+    <None Include="Properties\font_italic.png" />
+    <None Include="Properties\font_bold.png" />
+    <None Include="Properties\document_save_as.png" />
+    <None Include="Properties\105_underline.png" />
+    <None Include="Properties\new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,7 +16,8 @@ namespace assignment2
             {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TextEditor("KenTest", "View"));
+            //Application.Run(new TextEditor("KenTest", "View"));
+            Application.Run(new Login());
             }
         }
     }
