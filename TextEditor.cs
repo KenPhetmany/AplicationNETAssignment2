@@ -121,8 +121,9 @@ namespace assignment2
             var test = int.Parse(fontComboBox.Text);
             //Gets the current selection of the text
             string fontName = richTextBox.SelectionFont.Name;
+            Font font = richTextBox.SelectionFont;
             //Sets the text with the new font size
-            richTextBox.SelectionFont = new Font(fontName, test);
+            richTextBox.SelectionFont = new Font(fontName, test, font.Style);
             }
         //Cuts a selection of the text
         private void cutBtn_Click(object sender, EventArgs e)

@@ -14,6 +14,15 @@ namespace assignment2
         //Searches through the login.txt for a username that was created and then a valid password
         private void login()
             {
+            //If validateLogin() returns true or it works, an error message box won't show
+            if (validateLogin());
+            else
+                //If username is not located or if password is incorrect, an error message box will show
+                MessageBox.Show("Inputs are incorrect! Please try again.", "Login failed");
+            }
+
+        private bool validateLogin()
+            {
             string[] lines = System.IO.File.ReadAllLines("login.txt");
             for (int i = 0; i < lines.Length; i++)
                 {
@@ -25,14 +34,13 @@ namespace assignment2
                     //If username and password match, login form is closed and they have access to the text editor
                     MessageBox.Show("Login worked!", "Logging in now...!");
                     //Username and usertype is passed down to the next form
-                    TextEditor textEditor = new TextEditor(username.Text, details[3]);
+                    TextEditor textEditor = new TextEditor(username.Text, details[2]);
                     this.Hide();
                     textEditor.ShowDialog();
-                    break;
+                    return true;
                     }
                 }
-            //If username is not located or if password is incorrect, an error message box will show
-            MessageBox.Show("Inputs are incorrect! Please try again.", "Login failed");
+            return false;
             }
 
         //Button to intiate the login() function
