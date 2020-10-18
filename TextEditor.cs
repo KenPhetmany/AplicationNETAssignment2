@@ -7,7 +7,7 @@ namespace assignment2
     {
     public partial class TextEditor : Form
         {
-        //Gets the name of the current file if it exists
+        //Gets the name of the current file to keep track
         private string fileName = "";
         //Some parameters that are passed down to be used
         public TextEditor(string username, string userType)
@@ -32,36 +32,42 @@ namespace assignment2
                 fontComboBox.Items.Add(i);
                 }
             }
-
+        //Creates a new file
         private void newBtn_Click(object sender, EventArgs e)
             {
+            //Resets the rich text box and filename
             richTextBox.Clear();
             fileName = "";
             }
-
+        //Opens a txt.file from the document folder
         private void openBtn_Click(object sender, EventArgs e)
             {
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                //Opens the selected textfile as a rich text
                 richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.RichText);
+                //Gets the file name to keep track of
                 fileName = Path.GetFileName(openFile.FileName);
                 }
             }
-
+        //Saves the current file, whether it is new or not
         private void saveBtn_Click(object sender, EventArgs e)
             {
+            //Checks if the current file already exists.
             if (fileExists(fileName))
                 {
                 string path = "documents\\" + fileName;
+                //If the file exists, then it overrwrites the current file and floods it with new changes
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
-                MessageBox.Show("Saving at: " + fileName);
                 }
             else
                 {
+                //If the current file does not exists, then it will be saved as a new file 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                     {
                     try
                         {
+                        //File is saved with the user input on the file name
                         richTextBox.SaveFile(saveFile.FileName,
                        RichTextBoxStreamType.RichText);
                         }
@@ -72,13 +78,14 @@ namespace assignment2
                     }
                 }
             }
-
+        //Saves the file as a brand new file regardless whether it is new or not. 
         private void saveAsBtn_Click(object sender, EventArgs e)
             {
             if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                 try
                     {
+                    //File is saved with the user input on the file name
                     richTextBox.SaveFile(saveFile.FileName,
                     RichTextBoxStreamType.RichText);
                     }
@@ -88,69 +95,79 @@ namespace assignment2
                     }
                 }
             }
-
+        //Makes the selected or future text bold
         private void boldBtn_Click(object sender, System.EventArgs e)
             {
+            //The XOR function adds/removes the setting so every other font style is maintained
             richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold ^ richTextBox.SelectionFont.Style);
 
             }
-
+        //Makes the selected or future text italics
         private void italicsBtn_Click(object sender, EventArgs e)
             {
+            //The XOR function adds/removes the setting so every other font style is maintained
             richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Italic ^ richTextBox.SelectionFont.Style);
             }
-
+        //Makes the selected or future text underlined
         private void underlineBtn_Click(object sender, EventArgs e)
             {
+            //The XOR function adds/removes the setting so every other font style is maintained
             richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Underline ^ richTextBox.SelectionFont.Style);
             }
-
+        //Updates the font size of the current or future text
         private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
             {
+            //Gets the current value from the combobox
             var test = int.Parse(fontComboBox.Text);
+            //Gets the current selection of the text
             string fontName = richTextBox.SelectionFont.Name;
-            //richTextBox.SelectionFont = new Font(fontName, test);
+            //Sets the text with the new font size
             richTextBox.SelectionFont = new Font(fontName, test);
             }
-
+        //Cuts a selection of the text
         private void cutBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Cut();
             }
-
+        //Copies a selection of the text
         private void copyBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Copy();
             }
-
+        //Pastes a selection of the text
         private void pasteBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Paste();
             }
-
+        //Opens a txt.file from the document folder
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
             {
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                //Opens the selected textfile as a rich text
                 richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.RichText);
+                //Gets the file name to keep track of
                 fileName = openFile.FileName;
                 }
             }
-
+        //Saves the current file, whether it is new or not
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
             {
             if (fileExists(fileName))
                 {
+                //If the file exists, then it overrwrites the current file and floods it with new changes
                 string path = "documents\\" + fileName;
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
                 MessageBox.Show("Saving at: " + fileName);
                 }
             else
                 {
+                //If the current file does not exists, then it will be saved as a new file 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                     {
                     try
                         {
+                        //File is saved with the user input on the file name
                         richTextBox.SaveFile(saveFile.FileName,
                        RichTextBoxStreamType.RichText);
                         }
@@ -161,13 +178,14 @@ namespace assignment2
                     }
                 }
             }
-
+        //Saves the file as a brand new file regardless whether it is new or not. 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
             {
             if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                 try
                     {
+                    //File is saved with the user input on the file name
                     richTextBox.SaveFile(saveFile.FileName,
                    RichTextBoxStreamType.RichText);
                     }
@@ -177,34 +195,37 @@ namespace assignment2
                     }
                 }
             }
-
+        //Logs out the user and closes the application
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
             {
             Application.Exit();
             }
-
+        //Copies a selection of the text
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
             {
             richTextBox.Cut();
             }
-
+        //Copies a selection of the text
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
             {
             richTextBox.Copy();
             }
-
+        //Pastes a selection of the text
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
             {
             richTextBox.Paste();
             }
-
+        //Opens a txt.file from the document folder
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
             {
+            //Resets the rich text box and filename
             richTextBox.Clear();
+            fileName = "";
             }
-
+        //Shows the student details 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
             {
+            //Setting the message to be shown
             string message = ".NET Assignment 2" +
                 "\nProgram: Simple Text Editor" +
                 "\nStudent: Ken Phetmany" +
@@ -212,9 +233,10 @@ namespace assignment2
                 ;
             MessageBox.Show(message, "About");
             }
-
+        //Function responsible to check if the file currently exists
         private bool fileExists(string title)
             {
+            //Accesses all txt and rtf files in the documents folder
             string[] documents = Directory.GetFiles("documents");
             foreach (string i in documents)
             // Processes each value to check whether the input exists in the array string
