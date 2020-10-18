@@ -30,13 +30,9 @@ namespace assignment2
                     textEditor.ShowDialog();
                     break;
                     }
-                else
-                //If username is not located or if password is incorrect, an error message box will show
-                    {
-                    MessageBox.Show("Login failed", "Inputs are invalid! Please try again.");
-                    break;
-                    }
                 }
+            //If username is not located or if password is incorrect, an error message box will show
+            MessageBox.Show("Inputs are incorrect! Please try again.", "Login failed");
             }
 
         //Button to intiate the login() function

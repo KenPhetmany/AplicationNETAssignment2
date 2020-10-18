@@ -7,21 +7,24 @@ namespace assignment2
     {
     public partial class TextEditor : Form
         {
+        //Gets the name of the current file if it exists
         private string fileName = "";
-
+        //Some parameters that are passed down to be used
         public TextEditor(string username, string userType)
 
             {
             InitializeComponent();
             InitializeFontSize();
+            //Displays the user's username and their user type
             userNameTitle.Text = "Username: " + username;
             userTypeTitle.Text = "User type: " + userType;
+            //Sets the view or edit options depending on user
             if (userType == "View")
                 {
-                richTextBox.ReadOnly = false;
+                richTextBox.ReadOnly = true;
                 }
             }
-
+        //Initializes the fontComboBox by flooding in integers. 
         private void InitializeFontSize()
             {
             for (int i = 8; i <= 20; i++)
@@ -33,13 +36,14 @@ namespace assignment2
         private void newBtn_Click(object sender, EventArgs e)
             {
             richTextBox.Clear();
+            fileName = "";
             }
 
         private void openBtn_Click(object sender, EventArgs e)
             {
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
+                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.RichText);
                 fileName = Path.GetFileName(openFile.FileName);
                 }
             }
@@ -49,7 +53,7 @@ namespace assignment2
             if (fileExists(fileName))
                 {
                 string path = "documents\\" + fileName;
-                richTextBox.SaveFile(path, RichTextBoxStreamType.PlainText);
+                richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
                 MessageBox.Show("Saving at: " + fileName);
                 }
             else
@@ -59,7 +63,7 @@ namespace assignment2
                     try
                         {
                         richTextBox.SaveFile(saveFile.FileName,
-                       RichTextBoxStreamType.PlainText);
+                       RichTextBoxStreamType.RichText);
                         }
                     catch (Exception ex)
                         {
@@ -76,7 +80,7 @@ namespace assignment2
                 try
                     {
                     richTextBox.SaveFile(saveFile.FileName,
-                    RichTextBoxStreamType.PlainText);
+                    RichTextBoxStreamType.RichText);
                     }
                 catch (Exception ex)
                     {
@@ -87,23 +91,25 @@ namespace assignment2
 
         private void boldBtn_Click(object sender, System.EventArgs e)
             {
-            richTextBox.SelectionFont = new Font(this.Font, FontStyle.Bold);
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Bold ^ richTextBox.SelectionFont.Style);
+
             }
 
         private void italicsBtn_Click(object sender, EventArgs e)
             {
-            richTextBox.SelectionFont = new Font(this.Font, FontStyle.Italic);
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Italic ^ richTextBox.SelectionFont.Style);
             }
 
         private void underlineBtn_Click(object sender, EventArgs e)
             {
-            richTextBox.SelectionFont = new Font(this.Font, FontStyle.Underline);
+            richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, FontStyle.Underline ^ richTextBox.SelectionFont.Style);
             }
 
         private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
             {
-            var test = float.Parse(fontComboBox.Text);
+            var test = int.Parse(fontComboBox.Text);
             string fontName = richTextBox.SelectionFont.Name;
+            //richTextBox.SelectionFont = new Font(fontName, test);
             richTextBox.SelectionFont = new Font(fontName, test);
             }
 
@@ -126,7 +132,7 @@ namespace assignment2
             {
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.PlainText);
+                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.RichText);
                 fileName = openFile.FileName;
                 }
             }
@@ -146,7 +152,7 @@ namespace assignment2
                     try
                         {
                         richTextBox.SaveFile(saveFile.FileName,
-                       RichTextBoxStreamType.PlainText);
+                       RichTextBoxStreamType.RichText);
                         }
                     catch (Exception ex)
                         {
@@ -163,7 +169,7 @@ namespace assignment2
                 try
                     {
                     richTextBox.SaveFile(saveFile.FileName,
-                   RichTextBoxStreamType.PlainText);
+                   RichTextBoxStreamType.RichText);
                     }
                 catch (Exception ex)
                     {
@@ -199,7 +205,11 @@ namespace assignment2
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
             {
-            string message = "98042183";
+            string message = ".NET Assignment 2" +
+                "\nProgram: Simple Text Editor" +
+                "\nStudent: Ken Phetmany" +
+                "\nStudent ID: 98042183"
+                ;
             MessageBox.Show(message, "About");
             }
 

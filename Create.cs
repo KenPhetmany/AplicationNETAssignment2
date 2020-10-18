@@ -97,13 +97,12 @@ namespace assignment2
         //Function to create an account using the validated fields.
         private void createAccount()
             {
-            MessageBox.Show(birthDate.Text, "Get Date");
             try
                 {
                 using (StreamWriter writer = new StreamWriter("login.txt", true))
                     {
                     // Appends to the text file, adding a new line of text and adding all fields to the file.
-                    writer.Write(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text);
+                    writer.WriteLine(username1.Text + "," + password.Text + "," + userType.Text + "," + firstName.Text + "," + lastName.Text + "," + birthDate.Text);
                     writer.Close();
                     }
                 //After successful creation a message box will show, confirming account creation
