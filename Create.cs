@@ -88,10 +88,8 @@ namespace assignment2
                     //If there exists a username already, return true
                     return true;
                     }
-                else
-                    return false;
                 }
-            return true;
+            return false;
             }
 
         //Function to create an account using the validated fields.

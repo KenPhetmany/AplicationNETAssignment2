@@ -35,11 +35,12 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.usernameTitle = new System.Windows.Forms.Label();
             this.passwordTitle = new System.Windows.Forms.Label();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(67, 210);
+            this.loginBtn.Location = new System.Drawing.Point(67, 246);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(175, 45);
             this.loginBtn.TabIndex = 1;
@@ -50,7 +51,7 @@
             // username
             // 
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(267, 106);
+            this.username.Location = new System.Drawing.Point(267, 142);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(218, 30);
             this.username.TabIndex = 2;
@@ -58,7 +59,7 @@
             // password
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(267, 155);
+            this.password.Location = new System.Drawing.Point(267, 191);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 30);
@@ -67,7 +68,7 @@
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(267, 210);
+            this.createBtn.Location = new System.Drawing.Point(267, 246);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(175, 45);
             this.createBtn.TabIndex = 4;
@@ -77,7 +78,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(473, 210);
+            this.exitBtn.Location = new System.Drawing.Point(473, 246);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(175, 45);
             this.exitBtn.TabIndex = 5;
@@ -89,7 +90,7 @@
             // 
             this.usernameTitle.AutoSize = true;
             this.usernameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTitle.Location = new System.Drawing.Point(103, 106);
+            this.usernameTitle.Location = new System.Drawing.Point(103, 142);
             this.usernameTitle.Name = "usernameTitle";
             this.usernameTitle.Size = new System.Drawing.Size(139, 29);
             this.usernameTitle.TabIndex = 6;
@@ -99,17 +100,28 @@
             // 
             this.passwordTitle.AutoSize = true;
             this.passwordTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTitle.Location = new System.Drawing.Point(103, 155);
+            this.passwordTitle.Location = new System.Drawing.Point(103, 191);
             this.passwordTitle.Name = "passwordTitle";
             this.passwordTitle.Size = new System.Drawing.Size(135, 29);
             this.passwordTitle.TabIndex = 7;
             this.passwordTitle.Text = "Password:";
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitle.Location = new System.Drawing.Point(67, 72);
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.ReadOnly = true;
+            this.textBoxTitle.Size = new System.Drawing.Size(566, 42);
+            this.textBoxTitle.TabIndex = 8;
+            this.textBoxTitle.Text = "Welcome to the simple editor program!";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 390);
+            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.passwordTitle);
             this.Controls.Add(this.usernameTitle);
             this.Controls.Add(this.exitBtn);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label usernameTitle;
         private System.Windows.Forms.Label passwordTitle;
+        private System.Windows.Forms.TextBox textBoxTitle;
         }
     }
 

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin\\Debug\\documents"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\bin",
   "PreviewInSolutionExplorer": false
 }

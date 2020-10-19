@@ -10,7 +10,6 @@ namespace assignment2
             {
             InitializeComponent();
             }
-
         //Searches through the login.txt for a username that was created and then a valid password
         private void login()
             {
@@ -20,7 +19,6 @@ namespace assignment2
                 //If username is not located or if password is incorrect, an error message box will show
                 MessageBox.Show("Inputs are incorrect! Please try again.", "Login failed");
             }
-
         private bool validateLogin()
             {
             string[] lines = System.IO.File.ReadAllLines("login.txt");
@@ -42,7 +40,6 @@ namespace assignment2
                 }
             return false;
             }
-
         //Button to intiate the login() function
         private void loginBtn_click(object sender, EventArgs e)
             {
@@ -50,30 +47,28 @@ namespace assignment2
             if (username.Text == "" || password.Text == "")
                 {
                 //If either textfields are empty, an error message box will show
-                MessageBox.Show("Login failed", "You have empty fields! Please enter valid inputs ");
+                MessageBox.Show("You have empty fields! Please enter valid inputs.", "Login failed");
                 }
             else
                 login();
             }
-
         //Button to go to initiate create()
         private void createBtn_click(object sender, EventArgs e)
             {
             this.Hide();
             create();
             }
-
         //Button to close the program
         private void exitBtn_click(object sender, EventArgs e)
             {
             Application.Exit();
             }
-
         //Initiates a new create() form (responsible for creating a new user)
         private void create()
             {
             Create create = new Create();
             create.ShowDialog();
             }
+
         }
     }
