@@ -66,7 +66,7 @@ namespace assignment2
                 string path = "documents\\" + fileName;
                 //If the file exists, then it overrwrites the current file and floods it with new changes
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
-                fileName = Path.GetFileName(saveFile.FileName);
+                fileName = Path.GetFileName(fileName);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
@@ -182,7 +182,7 @@ namespace assignment2
                 //If the file exists, then it overrwrites the current file and floods it with new changes
                 string path = "documents\\" + fileName;
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
-                fileName = Path.GetFileName(saveFile.FileName);
+                fileName = Path.GetFileName(fileName);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
