@@ -17,3 +17,4 @@ student,test,Edit,ken,phetmany,Monday, 12 August 1996
 kp,123,Edit,ken,phetmany,12-08-1996
 apple,123,View,plwe,plwe,17-10-2020
 kp,123,Edit,dfgdfgd,dfgdfgdfg,17-10-2020
+kenview,123,View,ken,we,17-10-2020

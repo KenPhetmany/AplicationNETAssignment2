@@ -23,6 +23,15 @@ namespace assignment2
             if (userType == "View")
                 {
                 richTextBox.ReadOnly = true;
+                newToolStripMenuItem.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
+                saveAsToolStripMenuItem.Enabled = false;
+
+                newBtn.Enabled = false;
+                saveBtn.Enabled = false;
+                saveAsBtn.Enabled = false;
+                fontComboBox.Enabled = false;
+                toolStrip2.Enabled = false;
                 }
             }
 
