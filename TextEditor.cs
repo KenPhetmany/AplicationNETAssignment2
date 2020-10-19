@@ -66,7 +66,6 @@ namespace assignment2
                 string path = "documents\\" + fileName;
                 //If the file exists, then it overrwrites the current file and floods it with new changes
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
-                fileName = Path.GetFileName(fileName);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
@@ -100,7 +99,7 @@ namespace assignment2
                     //File is saved with the user input on the file name
                     richTextBox.SaveFile(saveFile.FileName,
                     RichTextBoxStreamType.RichText);
-                    fileName = Path.GetFileName(openFile.FileName);
+                    fileName = Path.GetFileName(saveFile.FileName);
                     toolStripFileName.Text = "File Name: " + fileName;
                     }
                 catch (Exception ex)
@@ -182,7 +181,6 @@ namespace assignment2
                 //If the file exists, then it overrwrites the current file and floods it with new changes
                 string path = "documents\\" + fileName;
                 richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
-                fileName = Path.GetFileName(fileName);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
@@ -216,7 +214,7 @@ namespace assignment2
                     //File is saved with the user input on the file name
                     richTextBox.SaveFile(saveFile.FileName,
                    RichTextBoxStreamType.RichText);
-                    fileName = Path.GetFileName(openFile.FileName);
+                    fileName = Path.GetFileName(saveFile.FileName);
                     toolStripFileName.Text = "File Name: " + fileName;
                     }
                 catch (Exception ex)
@@ -231,6 +229,7 @@ namespace assignment2
             {
             this.Hide();
             Login login = new Login();
+            login.ShowDialog();
             }
 
         //Copies a selection of the text
