@@ -50,9 +50,9 @@ namespace assignment2
             if (openFile.ShowDialog() == DialogResult.OK)
                 {
                 //Opens the selected textfile as a rich text
-                richTextBox.LoadFile(openFile.FileName, RichTextBoxStreamType.RichText);
+                fileName = openFile.FileName;
+                richTextBox.LoadFile(fileName, RichTextBoxStreamType.RichText);
                 //Gets the file name to keep track of
-                fileName = Path.GetFileName(openFile.FileName);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             }
@@ -61,11 +61,10 @@ namespace assignment2
         private void saveBtn_Click(object sender, EventArgs e)
             {
             //Checks if the current file already exists.
-            if (fileExists(fileName))
+            if (!(string.IsNullOrEmpty(fileName)))
                 {
-                string path = "documents\\" + fileName;
                 //If the file exists, then it overrwrites the current file and floods it with new changes
-                richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
+                richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
@@ -76,9 +75,9 @@ namespace assignment2
                     try
                         {
                         //File is saved with the user input on the file name
-                        richTextBox.SaveFile(saveFile.FileName,
-                       RichTextBoxStreamType.RichText);
-                        fileName = Path.GetFileName(saveFile.FileName);
+                        fileName = saveFile.FileName;
+                        richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
+
                         toolStripFileName.Text = "File Name:" + fileName;
                         }
                     catch (Exception ex)
@@ -97,10 +96,10 @@ namespace assignment2
                 try
                     {
                     //File is saved with the user input on the file name
-                    richTextBox.SaveFile(saveFile.FileName,
-                    RichTextBoxStreamType.RichText);
-                    fileName = Path.GetFileName(saveFile.FileName);
-                    toolStripFileName.Text = "File Name: " + fileName;
+                    fileName = saveFile.FileName;
+                    richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
+
+                    toolStripFileName.Text = "File Name:" + fileName;
                     }
                 catch (Exception ex)
                     {
@@ -176,11 +175,11 @@ namespace assignment2
         //Saves the current file, whether it is new or not
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
             {
-            if (fileExists(fileName))
+            //Checks if the current file already exists.
+            if (!(string.IsNullOrEmpty(fileName)))
                 {
                 //If the file exists, then it overrwrites the current file and floods it with new changes
-                string path = "documents\\" + fileName;
-                richTextBox.SaveFile(path, RichTextBoxStreamType.RichText);
+                richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
                 toolStripFileName.Text = "File Name: " + fileName;
                 }
             else
@@ -191,10 +190,10 @@ namespace assignment2
                     try
                         {
                         //File is saved with the user input on the file name
-                        richTextBox.SaveFile(saveFile.FileName,
-                       RichTextBoxStreamType.RichText);
-                        fileName = Path.GetFileName(saveFile.FileName);
-                        toolStripFileName.Text = "File Name: " + fileName;
+                        fileName = saveFile.FileName;
+                        richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
+
+                        toolStripFileName.Text = "File Name:" + fileName;
                         }
                     catch (Exception ex)
                         {
@@ -212,10 +211,10 @@ namespace assignment2
                 try
                     {
                     //File is saved with the user input on the file name
-                    richTextBox.SaveFile(saveFile.FileName,
-                   RichTextBoxStreamType.RichText);
-                    fileName = Path.GetFileName(saveFile.FileName);
-                    toolStripFileName.Text = "File Name: " + fileName;
+                    fileName = saveFile.FileName;
+                    richTextBox.SaveFile(fileName, RichTextBoxStreamType.RichText);
+
+                    toolStripFileName.Text = "File Name:" + fileName;
                     }
                 catch (Exception ex)
                     {
@@ -229,7 +228,6 @@ namespace assignment2
             {
             this.Hide();
             Login login = new Login();
-            login.ShowDialog();
             }
 
         //Copies a selection of the text
@@ -268,22 +266,6 @@ namespace assignment2
                 "\nStudent ID: 98042183"
                 ;
             MessageBox.Show(message, "About");
-            }
-
-        //Function responsible to check if the file currently exists
-        private bool fileExists(string title)
-            {
-            //Accesses all txt and rtf files in the documents folder
-            string[] documents = Directory.GetFiles("documents");
-            foreach (string i in documents)
-            // Processes each value to check whether the input exists in the array string
-                {
-                if (i == "documents\\" + title || i == "documents\\" + title)
-                    {
-                    return true;
-                    }
-                }
-            return false;
             }
         }
     }
