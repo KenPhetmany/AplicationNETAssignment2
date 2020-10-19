@@ -80,7 +80,7 @@
             this.toolStripFileName});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(888, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(888, 37);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -201,10 +201,10 @@
             this.userNameTitle,
             this.userTypeTitle,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 35);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 37);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(888, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(888, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -214,7 +214,7 @@
             this.newBtn.Image = ((System.Drawing.Image)(resources.GetObject("newBtn.Image")));
             this.newBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newBtn.Name = "newBtn";
-            this.newBtn.Size = new System.Drawing.Size(34, 28);
+            this.newBtn.Size = new System.Drawing.Size(34, 33);
             this.newBtn.Text = "New";
             this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
@@ -313,7 +313,7 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Text = "Log off";
             this.toolStripButton1.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // richTextBox
@@ -332,10 +332,10 @@
             this.cutBtn,
             this.copyBtn,
             this.pasteBtn});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 68);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 75);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(37, 381);
+            this.toolStrip2.Size = new System.Drawing.Size(37, 374);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 

@@ -35,7 +35,7 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.usernameTitle = new System.Windows.Forms.Label();
             this.passwordTitle = new System.Windows.Forms.Label();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -106,22 +106,22 @@
             this.passwordTitle.TabIndex = 7;
             this.passwordTitle.Text = "Password:";
             // 
-            // textBoxTitle
+            // labelTitle
             // 
-            this.textBoxTitle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(67, 72);
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(566, 42);
-            this.textBoxTitle.TabIndex = 8;
-            this.textBoxTitle.Text = "Welcome to the simple editor program!";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(60, 74);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(618, 37);
+            this.labelTitle.TabIndex = 9;
+            this.labelTitle.Text = "Welcome to the simple editor program!";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 390);
-            this.Controls.Add(this.textBoxTitle);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.passwordTitle);
             this.Controls.Add(this.usernameTitle);
             this.Controls.Add(this.exitBtn);
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label usernameTitle;
         private System.Windows.Forms.Label passwordTitle;
-        private System.Windows.Forms.TextBox textBoxTitle;
+        private System.Windows.Forms.Label labelTitle;
         }
     }
 
